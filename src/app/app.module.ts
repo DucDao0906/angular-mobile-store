@@ -8,7 +8,8 @@ import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AddProductComponent } from './add-product/add-product.component';
-import { ProductsListComponent } from './products-list/products-list.component'; 
+import { ProductsListComponent } from './products-list/products-list.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component'; 
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ProductsListComponent } from './products-list/products-list.component';
     LoginComponent,
     HeaderComponent,
     AddProductComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
