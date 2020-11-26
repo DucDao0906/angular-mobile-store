@@ -1,18 +1,18 @@
 <app-header title="Products" subtitle="" button=""></app-header>
-<div class="container">
+<div class="container" *ngIf="data">
   <div class="row">
     <div class="col-sm">
-      <img src="../../assets/img/demo-img.jpg" alt="Demo">
+      <img src={{data.image}} alt="Demo">
     </div>
     <div class="col-sm">
-      <b class="name">Name: Iphone X</b>
-      <p>Description: A smartphone is a handheld personal computer with a mobile operating system and an integrated mobile broadband cellular network connection for voice, SMS and internet data communication; most, if not all, smartphones also support Wi-fi</p>
+      <b class="name">{{data.name}}</b>
+      <p>Description: {{data.description}}</p>
       <b>Item Code: <a href="#" class="btn btn-warning code">Code: 152644038285</a></b>
-      <p><b>Manufacturer: </b>Apple</p>
-      <p><b>Category: </b><a href="#">apple</a></p>
-      <p><b>Available units in Stock: </b>800</p>
-      <p>Price</p>
-      <a href="/" class="btn btn-success"><i class="fas fa-arrow-alt-circle-left"></i> Back</a>
+      <p><b>Manufacturer: </b>{{data.manufacturer}}</p>
+      <p><b>Category: </b><a href="#">{{data.category}}</a></p>
+      <p><b>Available units in Stock: </b>{{data.quantity}}</p>
+      <p>{{data.price}} USD</p>
+      <a href="/products" class="btn btn-success"><i class="fas fa-arrow-alt-circle-left"></i> Back</a>
       <a href="#" class="btn btn-warning"><i class="fas fa-shopping-cart"></i>Order Now</a>
     </div>
   </div>

@@ -9,10 +9,6 @@ import { ProductsListComponent } from './products-list/products-list.component';
 const routes: Routes = [
   {
     path: '',
-    component: ProductsListComponent
-  },
-  {
-    path: 'login',
     component: LoginComponent
   },
   {
@@ -22,6 +18,10 @@ const routes: Routes = [
   {
     path: 'products/:id',
     component: ProductDetailComponent
+  },
+  {
+    path: 'products',
+    component: ProductsListComponent
   },
   {
     path: 'cart',

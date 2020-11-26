@@ -19,30 +19,21 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) {}
 
-  // login = () => {
-  //   this.authenticationService.login(this.userName, this.password).subscribe(
-  //     (data) => {
-  //       if (data != null && data.username) {
-  //         localStorage.setItem('username', data.username);
-  //         localStorage.setItem('password', data.password);
-  //         console.log('login Success');
-  //         // this.router.navigateByUrl('/productList');
-  //       } else {
-  //         console.log('login fail');
-  //       }
-  //     },
-  //     (err) => console.error(err)
-  //   );
-  // };
-  login = async () => {
-    const body = { username: this.username, password: this.password };
-    try {
-      const res = await api.post(`/users/login`, body);
-      const { token } = res.data;
-      setAuthToken(token);
-    } catch (error) {
-      console.log(error.message);
-    }
+  login = () =>{
+    this.authenticationService.login(this.username, this.password).subscribe(
+      (data) => {
+        if (data != null && data.name) {
+          localStorage.setItem('username', this.username);
+          console.log(data)
+          // localStorage.setItem('password', data.password);
+          console.log('login Success');
+          this.router.navigateByUrl('/products');
+        } else{
+          console.log('login fail');
+        }
+      },
+      (err) => console.error(err)
+    );
   };
 
   ngOnInit(): void {}
