@@ -1,9 +1,7 @@
 <app-header title="Mobile Store" subtitle="" button=""></app-header>
 <div class="container">
-  <div class="card" style="width: 30vw; margin: 1rem auto; min-width: 24rem;">
-    <div class="card-header">
-      Please sign in
-    </div>
+  <div class="card" style="width: 30vw; margin: 1rem auto; min-width: 24rem">
+    <div class="card-header">Please sign in</div>
     <div class="card-body">
       <form (ngSubmit)="login()" #loginForm="ngForm">
         <div class="form-group">
@@ -12,7 +10,7 @@
             class="form-control"
             id="inputUser"
             placeholder="User Name"
-            [(ngModel)]="userName"
+            [(ngModel)]="username"
             [ngModelOptions]="{ standalone: true }"
             required
           />
