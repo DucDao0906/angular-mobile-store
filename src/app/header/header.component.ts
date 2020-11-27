@@ -14,13 +14,21 @@ export class HeaderComponent implements OnInit {
   @Input() button = '';
 
   constructor(
-  private authenticationService: AuthenticationService,
-  private router: Router
+    private authenticationService: AuthenticationService,
+    private router: Router
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    let localCart = JSON.parse(localStorage.getItem('cart'));
+    let count = document.getElementById('cart__count');
+    if (localCart) {
+      count.textContent = localCart.length;
+    } else {
+      count.textContent = '0';
+    }
+  }
   public onLogout = () => {
     this.authenticationService.logout();
     this.router.navigateByUrl('/login');
-  }
+  };
 }

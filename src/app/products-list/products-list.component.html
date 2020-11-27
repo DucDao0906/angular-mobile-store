@@ -4,21 +4,29 @@
   button="view-cart"
 ></app-header>
 <div class="container">
-  <div class="card-deck" *ngFor="let product of datas">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">{{product.name}}</h5>
-        <img class="card-img-top" src={{product.image}} alt="Image" />
-        <p class="card-text">{{product.description}}</p>
-        <p class="card-text"><small class="text-muted">{{product.price}} USD</small></p>
-        <p class="card-text"><small class="text-muted">{{product.quantity}} units in Stock</small></p>
-        <div style="display: flex; justify-content: space-around">
-          <a href="/products/{{product.id}}" class="btn btn-primary"
-            ><i class="fas fa-info-circle"></i> Details</a
-          >
-          <a class="btn btn-warning" (click)="addCart(product.id)"
-            ><i class="fas fa-shopping-cart"></i> Order Now</a
-          >
+  <div class="row">
+    <div *ngFor="let product of datas" class="col-md-4">
+      <div class="card mb-4 box-shadow">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <img class="card-img-top" src="{{ product.image }}" alt="Image" />
+          <p class="card-text">{{ product.description }}</p>
+          <p class="card-text">
+            <small class="text-muted">{{ product.price }} USD</small>
+          </p>
+          <p class="card-text">
+            <small class="text-muted"
+              >{{ product.quantity }} units in Stock</small
+            >
+          </p>
+          <div style="display: flex; justify-content: space-around">
+            <a href="/products/{{ product.id }}" class="btn btn-primary"
+              ><i class="fas fa-info-circle"></i> Details</a
+            >
+            <a class="btn btn-warning" (click)="addCart(product.id)"
+              ><i class="fas fa-shopping-cart"></i> Order Now</a
+            >
+          </div>
         </div>
       </div>
     </div>
